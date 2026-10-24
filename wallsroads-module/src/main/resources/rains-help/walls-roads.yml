@@ -1,0 +1,63 @@
+id: walls-roads
+title: Walls & Roads
+summary: Mark corners with a stick and get a town wall or a road, built for you — and taken back down just as exactly.
+intro: |
+  Ever wished you could point at a hill and say "road, please"? Do that, then. Walls and roads are marked with a stick, built block by block, and every build has an exact undo. I find that comforting.
+icon: STONE_BRICK_WALL
+category: Land & building
+order: 20
+module: wallsroads
+aliases: [wr, wallsandroads, town, wall-and-road, build-wall, build-road, stick]
+keywords: [marking, stick, undo, manual, map, corners, polygon, protect, mine]
+commands: [wallsroads]
+related: [roads, walls]
+sections:
+  - question: What is this, and how do I start?
+    title: Start here
+    text: |
+      Type {run:/wallsroads} — the front page: your roads, your walls, buttons to mark a new one, the manual and (for staff) how the server builds. A <i>wall</i> encloses a shape; a <i>road</i> runs along a path. Where a road crosses a wall, a gate is cut for it.
+      {cmd:/wallsroads road new} or {cmd:/wallsroads wall new} hands you a marking stick. That is the whole ritual.
+  - question: Who may mark a wall or road?
+    title: Who may
+    text: |
+      {if:wallsroads:open-marking}Anybody. Go on.{else}Only builders: you need the permission <white>rainswallsandroads.create</white>.{/if}
+      {if:!wallsroads:open-marking && @perm:rainswallsandroads.create}You have it.{/if}
+      Using the menus and the commands at all takes <white>rainswallsandroads.use</white>, which everybody has unless staff say otherwise. Whatever you build is yours: only you (and staff) can edit it.
+  - question: How does the marking stick work?
+    title: The stick
+    text: |
+      The stick is a {setting:wallsroads:selection-stick-material}. <white>Right-click</white> a block to add a corner. <white>Left-click</white> a block to undo the last corner. <white>Shift + right-click</white> to finish and build. <white>Shift + left-click</white> on air to give up (or type {cmd:/wallsroads cancel}).
+      Each corner is shown as a client-side {setting:wallsroads:selection-marker-material} block that only you see, and a particle outline draws the shape as you go: grey for a wall, amber for a road. Starting a new selection throws the old one away.
+  - question: How many corners do I need?
+    title: Corners
+    text: |
+      A wall needs at least <white>3</white> corners (it is a closed shape, I close it for you). A road needs at least <white>2</white> points. I will say so if you finish too early; the stick stays in your hand, so just add more.
+      Walls are built from the height you stood at when you finish; a road follows the terrain unless you tell it otherwise.
+  - question: Where do I find what I built?
+    title: Lists & names
+    text: |
+      {run:/walls} and {run:/roads} open your lists. Give a name and you go straight to that one: {cmd:/wall <name>}, {cmd:/road <name>} (or {cmd:/wallsroads wall <name>}). New ones are called <i>Wall 1</i>, <i>Road 1</i> and so on — rename from the page: click, type the new name in chat within thirty seconds, or type <white>cancel</white>.
+  - question: Can I take it back down?
+    title: Undo
+    text: |
+      Yes, and exactly. Before a build I remember what was there, so <i>take it down</i> puts that back — grass, stone, the lot. <i>Remove</i> does the same and then forgets the wall or road; it asks for confirmation first, and that part cannot be undone.
+  - question: Can others break my wall?
+    title: Protection
+    text: |
+      No. Other players cannot break or place blocks in a standing wall or road, and explosions leave them alone (the rest of the blast goes on as usual). That is not me being precious: tearing down works from the "before" picture, and a hole somebody mined would be filled with blocks that were never there. You and staff can change them.
+  - question: Can two builds overlap?
+    title: Overlaps
+    text: |
+      Nothing is built over somebody else's wall or road. A crossing belongs to whichever got there first, so taking the second one down never punches a hole in the first.
+  - question: Is there a manual?
+    title: Manual
+    text: |
+      {run:/wallsroads manual} opens a written book — the short version of all this, with this server's own numbers — and gives you a copy if you do not have one.
+  - question: Can I put gates and road ends on my map?
+    title: Map
+    text: |
+      {run:/wallsroads map} sends the gates and the ends of built roads in your world to your client's map as waypoints, if this server supports client maps. If it does not, I will tell you so rather than pretend.
+  - question: How big may a build be, and does it lag?
+    title: Pace
+    text: |
+      Building is spread out: {setting:wallsroads:blocks-per-batch|count} blocks per tick at most, so a huge wall takes a few moments instead of freezing the server. Let it finish before you flatten the hill next to it.

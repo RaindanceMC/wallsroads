@@ -1,0 +1,30 @@
+id: walls-roads-staff
+title: Walls & Roads (staff)
+summary: Managing everybody's walls and roads, building free, and how the server builds.
+intro: |
+  The power to flatten other people's town walls. Use sparingly, and with a clear conscience.
+icon: BOOKSHELF
+category: Staff
+order: 20
+module: wallsroads
+permission: rainswallsandroads.manage.any
+aliases: [wr-admin, wallsroads-config]
+keywords: [config, routing, manage, any, free, create]
+related: [walls-roads]
+sections:
+  - question: What may staff do?
+    title: Permissions
+    text: |
+      <white>rainswallsandroads.manage.any</white> — edit, rebuild, open, seal and remove any wall or road, and mine through any of them; also the staff buttons on the front page. <white>rainswallsandroads.create</white> — mark new ones when marking is not open to all (it is currently {setting:wallsroads:open-marking|yesno}). <white>rainswallsandroads.build.free</white> — build without the blocks being taken from your inventory.
+  - question: How do I see everyone's builds?
+    title: Everything
+    text: |
+      On the front page, <i>Everything on this server</i> lists every wall and road with who built it. Names in tab-completion of {cmd:/walls} and {cmd:/roads} are your own unless you hold manage.any, in which case you get all of them.
+  - question: How do I change how the server builds?
+    title: Config
+    text: |
+      {cmd:/wallsroads config} (or the front page button) steps the routing rules with clicks: steepest climb ({setting:wallsroads:max-grade|count}), terrain smoothing ({setting:wallsroads:terrain-smoothing|count}), bridge when {setting:wallsroads:bridge-min-gap|count} up, tunnel when {setting:wallsroads:tunnel-min-cover|count} deep, longest bridge ({setting:wallsroads:max-bridge-span|count}), and the sea tunnel thresholds ({setting:wallsroads:sea-tunnel-min-length|count} long, {setting:wallsroads:sea-tunnel-min-depth|count} deep). Everything, including defaults, open marking ({setting:wallsroads:open-marking|onoff}), charging ({setting:wallsroads:charge-materials|onoff}), automatic signs, the speed bonus, night closing and the build pace, is in {cmd:/settings}.
+  - question: Do structures survive a restart?
+    title: Persistence
+    text: |
+      Yes: records are kept and reloaded. If the module is stopped, standing walls and roads simply stay in the world; the town does not vanish.

@@ -1,0 +1,43 @@
+id: walls
+title: Walls & gates
+summary: Wall kinds, height, thickness, rounded corners, and gates that open, shut, seal and close at night.
+intro: |
+  A wall is a polite way of saying "mine". A gate is a polite way of saying "mine, but come in".
+icon: COBBLESTONE_WALL
+category: Land & building
+order: 22
+module: wallsroads
+aliases: [wall, gate, gates, castle, fortress, battlements, curfew]
+keywords: [thickness, height, corners, towers, seal, night, dusk, dawn, door]
+commands: [walls]
+related: [walls-roads, roads]
+sections:
+  - question: How do I make a wall?
+    title: Marking one
+    text: |
+      {cmd:/wallsroads wall new}, then click the corners of the shape it should enclose (the stick is in {topic:walls-roads}). New walls are {setting:wallsroads:default-wall-height|count} high, {setting:wallsroads:default-wall-thickness|count} thick, built of {setting:wallsroads:default-wall-material}, with {if:wallsroads:default-corner-radius > 0}corners rounded to {setting:wallsroads:default-corner-radius|count} blocks{else}sharp corners{/if}.
+  - question: What can I change on a wall?
+    title: Its page
+    text: |
+      Open it with {cmd:/wall <name>}. Build or take down, material, sharp or rounded corners, the kind of wall, height (up to 64), thickness (1–9), gates, who may work the gates, night closing, rename, remove. A standing wall is rebuilt when you change its shape. An unbuilt wall shows about how many blocks it would need.
+  - question: What kinds of wall are there?
+    title: Kinds
+    text: |
+      One button cycles three: <white>plain</white> (a boundary), <white>town</white> (footings, battlements and a walkway on top, as wide as the wall is thick) and <white>fortress</white> (the same, with corner towers). One block thick is a fence; three is a wall.
+  - question: How do gates appear?
+    title: Gates
+    text: |
+      Where a built road crosses a wall, a gate is cut for it automatically: an arch, {setting:wallsroads:default-gate-height|count} blocks tall at the crown. Build a road through an existing wall or a wall across an existing road — either way works. Taking the road down closes its gate up again.
+  - question: How do I open and shut a gate?
+    title: Working gates
+    text: |
+      Right-click the gate itself. Or open the wall's page, click <i>Gates</i>, and in the list <white>left-click</white> a gate to open or shut it. Closed gates are doors filling the arch.
+      By default only you (and staff) may work your gates; the wall's page has a switch to let anybody. If it is not yours, I say: "not yours to work".
+  - question: What does sealing do?
+    title: Sealing
+    text: |
+      In the gate list, <white>right-click</white> a gate to seal it: the opening is bricked up in the wall's own material, and the gate can no longer be worked. Right-click again to cut the opening back. Sealing is a decision about the wall; shutting is just a door.
+  - question: Do gates close at night?
+    title: Night closing
+    text: |
+      {if:wallsroads:night-curfew-allowed}If you switch it on for a wall, its gates shut at dusk and open at dawn. It acts on the change of day only, so a gate you open at midnight stays open until the next change.{else}Not on this server — night closing is switched off, so gates stay as they are left.{/if}

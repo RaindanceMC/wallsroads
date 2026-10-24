@@ -1,0 +1,50 @@
+id: roads
+title: Roads
+summary: Kinds of road, bridges, tunnels, signs, the speed bonus and what a road costs.
+intro: |
+  A road here does not lie over the terrain like a carpet; it works out how to get across. I admire that in a road.
+icon: GRAVEL
+category: Land & building
+order: 21
+module: wallsroads
+aliases: [road, bridge, tunnel, highway, signpost, signs]
+keywords: [paving, width, lantern, curve, junction, speed, sea, kerb]
+commands: [roads]
+related: [walls-roads, walls]
+sections:
+  - question: How do I make a road?
+    title: Marking one
+    text: |
+      {cmd:/wallsroads road new}, then click points along the way it should run (see {topic:walls-roads} for the stick). New roads are {setting:wallsroads:default-road-width|count} blocks wide, paved with {setting:wallsroads:default-road-material}, and {if:wallsroads:road-curviness > 0}smoothed — corners are cut {setting:wallsroads:road-curviness|count} time(s), so a road sweeps instead of zig-zagging{else}follow your clicked points exactly, hard angles included{/if}.
+  - question: What can I change on a road?
+    title: Its page
+    text: |
+      Open it with {cmd:/road <name>}. On the page: build or take up, the material, the width (1–32), <i>follows the terrain</i> or a fixed height, the kind of road, signs, rename and remove. Changing the kind relays a built road.
+  - question: What kinds of road are there?
+    title: Kinds
+    text: |
+      One button cycles three: a <white>track</white> (paving only), a <white>made road</white> (kerbs and lanterns) and a <white>highway</white> (stone kerbs, sea lanterns, stone railings). A built road is relaid to match.
+  - question: What happens on slopes and hills?
+    title: Slopes & tunnels
+    text: |
+      A road may rise or fall at most {setting:wallsroads:max-grade|count} block(s) per block travelled — {if:wallsroads:max-grade > 1}so steeper than a road, it may become a staircase{else}a proper road slope{/if}. The ground is averaged over {setting:wallsroads:terrain-smoothing|count} column(s) either side so one boulder does not put a step in it. Where it would be {setting:wallsroads:tunnel-min-cover|count} or more blocks under the surface it is bored out as a lined, lit tunnel.
+  - question: What about gaps and valleys?
+    title: Bridges
+    text: |
+      Where the road has to run {setting:wallsroads:bridge-min-gap|count} or more blocks above the ground it becomes a bridge with a railing and piers. A bridge is level across at most {setting:wallsroads:max-bridge-span|count} blocks; anything wider, the road goes down into instead, since a bridge whose far end is out of sight is not a bridge.
+  - question: And water?
+    title: Crossing water
+    text: |
+      A short crossing is bridged. A water crossing at least {setting:wallsroads:sea-tunnel-min-length|count} blocks long and {setting:wallsroads:sea-tunnel-min-depth|count} deep goes under in a glass tunnel on the sea bed. A long but shallow one stays a causeway.
+  - question: What are the road signs?
+    title: Signs
+    text: |
+      {if:wallsroads:auto-place-signs}A road puts up its own name-boards at its ends, at every gate it passes and at junctions.{else}Automatic signs are off here, but a road's page can put them up with one click.{/if} On the road's page, click <i>Signs</i> to read them; click one and type new wording in chat (four lines, separated by <white>|</white>), or right-click one to point it at a claim by name — it then shows the claim and the distance. Right-click the Signs button to take them all down.
+  - question: Are roads faster to walk?
+    title: Speed bonus
+    text: |
+      {if:wallsroads:road-speed-bonus}Slightly: walking on a built road gives you a little Speed. Not enough to make a horse redundant — just enough to make a road network worth extending.{else}Not on this server: the road speed bonus is switched off. They are only pretty.{/if}
+  - question: What does a road cost?
+    title: Cost
+    text: |
+      {if:wallsroads:charge-materials}Building takes the blocks out of your inventory, paid up front, and builds as far as they stretch; I tell you how many were placed if you ran short. Bring more and build it again.{else}Nothing — this server builds from thin air.{/if}{if:@perm:rainswallsandroads.build.free} You build free anyway.{/if}
