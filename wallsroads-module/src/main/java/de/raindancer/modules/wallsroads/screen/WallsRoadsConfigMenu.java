@@ -100,9 +100,9 @@ public final class WallsRoadsConfigMenu extends Menu {
         band(MenuLayout.RULES, 1, Icons.of(Material.SCAFFOLDING, "<white>Longest bridge span",
                         lore(now.maxBridgeSpan() + " blocks",
                                 "<gray>The widest gap a road holds level across.",
-                                "<dark_gray>Anything wider it goes down into — a bridge",
-                                "<dark_gray>whose far end is out of sight is not a bridge,",
-                                "<dark_gray>it is a road in the sky.",
+                                "<dark_gray>Anything wider, it goes down into instead.",
+                                "<dark_gray>A bridge whose far end is out of sight",
+                                "<dark_gray>is not a bridge.",
                                 "",
                                 "<gray>Click to add eight. Right click to take eight away.")),
                 click -> step("max-bridge-span", now.maxBridgeSpan(), click, 4, 256, 8));
@@ -152,8 +152,7 @@ public final class WallsRoadsConfigMenu extends Menu {
         toggle(MenuLayout.LAND, 5, Material.FEATHER, "Roads are quicker to walk",
                 now.roadSpeedBonus(), "road-speed-bonus",
                 "<gray>A small speed bonus on a road this module built.",
-                "<dark_gray>It is what makes a road network worth extending",
-                "<dark_gray>rather than only worth looking at.");
+                "<dark_gray>It makes a road network worth extending.");
 
         toggle(MenuLayout.LAND, 7, Material.CLOCK, "Gates may shut at night",
                 now.nightCurfewAllowed(), "night-curfew-allowed",

@@ -211,9 +211,9 @@ public final class WallEditMenu extends Menu {
 
     private static String describe(WallProfile profile) {
         if (profile.hasTowers()) {
-            return "A fortress — footed, crenellated, with towers";
+            return "A fortress: footed, crenellated, with towers";
         }
-        return profile.battlements() ? "A town wall — footed, crenellated, with a walkway" : "A plain wall";
+        return profile.battlements() ? "A town wall: footed, crenellated, with a walkway" : "A plain wall";
     }
 
     private String estimate() {

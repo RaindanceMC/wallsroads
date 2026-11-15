@@ -117,7 +117,7 @@ public final class RoadEditMenu extends Menu {
         boolean hasSigns = !road.signs().isEmpty();
         band(MenuLayout.RULES, 4, mayManage,
                 Icons.of(hasSigns ? Material.OAK_SIGN : Material.BARRIER,
-                        hasSigns ? "<white>Signs — " + road.signs().size() + " placed" : "<gray>No signs",
+                        hasSigns ? "<white>Signs: " + road.signs().size() + " placed" : "<gray>No signs",
                         "",
                         hasSigns ? "<yellow>Click <gray>to read and reword them"
                                 : "<yellow>Click <gray>to put them up",
@@ -171,11 +171,11 @@ public final class RoadEditMenu extends Menu {
 
     private static String describe(de.raindancer.modules.wallsroads.model.RoadProfile profile) {
         if (!profile.isLit()) {
-            return "A track — paving, and nothing else";
+            return "A track: paving, and nothing else";
         }
         return profile.lamp() == Material.SEA_LANTERN
-                ? "A highway — stone kerbs, sea lanterns, stone railings"
-                : "A made road — kerbs and lanterns";
+                ? "A highway: stone kerbs, sea lanterns, stone railings"
+                : "A made road: kerbs and lanterns";
     }
 
     private String estimate() {

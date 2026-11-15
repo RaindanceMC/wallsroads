@@ -79,8 +79,8 @@ public record WallsRoadsSettings(
         boolean autoPlaceSigns,
 
         @In("wallsroads/build") @Title("Blocks placed per tick") @Range(min = 1, max = 10000)
-        @Describe("How many blocks a single build/teardown batch places before yielding — the pacing "
-                + "that keeps a huge wall from freezing the server for one tick.")
+        @Describe("How many blocks a single build/teardown batch places before yielding. This pacing "
+                + "keeps a huge wall from freezing the server for one tick.")
         @Key("blocks-per-batch")
         int blocksPerBatch,
 
@@ -128,8 +128,8 @@ public record WallsRoadsSettings(
         int tunnelMinCover,
 
         @In("wallsroads/route") @Title("Longest bridge span") @Range(min = 4, max = 256)
-        @Describe("The widest gap a road will hold level across. Anything wider it goes down into — "
-                + "a bridge whose far end is out of sight is not a bridge.")
+        @Describe("The widest gap a road will hold level across. Anything wider, it goes down into instead. "
+                + "A bridge whose far end is out of sight is not a bridge.")
         @Key("max-bridge-span")
         int maxBridgeSpan,
 
@@ -145,8 +145,8 @@ public record WallsRoadsSettings(
         int seaTunnelMinDepth,
 
         @In("wallsroads/road") @Title("Built roads are quicker to walk")
-        @Describe("On gives a small speed bonus to anybody walking on a road this module built. It "
-                + "is what makes a road network worth extending rather than only worth looking at.")
+        @Describe("On gives a small speed bonus to anybody walking on a road this module built, to make a road network "
+                + "worth extending.")
         @Key("road-speed-bonus")
         boolean roadSpeedBonus,
 
@@ -158,7 +158,7 @@ public record WallsRoadsSettings(
 
         @In("wallsroads/build") @Title("Marking marker block")
         @Describe("What a clicked corner is shown as while you are marking something out. Shown to "
-                + "you alone and never placed in the world — a light-emitting block reads best.")
+                + "you alone and never placed in the world. A light-emitting block reads best.")
         @Key("selection-marker-material")
         Material selectionMarkerMaterial,
 

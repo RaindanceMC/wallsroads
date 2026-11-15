@@ -37,7 +37,7 @@ public final class SignListMenu extends PaginatedMenu<RoadSign> {
 
     @Override
     protected Component title() {
-        return Component.text(road.name() + " — Signs");
+        return Component.text(road.name() + ": Signs");
     }
 
     @Override
@@ -51,7 +51,7 @@ public final class SignListMenu extends PaginatedMenu<RoadSign> {
         lore.add("<gray>" + sign.spot().x() + ", " + sign.spot().y() + ", " + sign.spot().z());
         lore.add("");
         for (String line : sign.lines()) {
-            lore.add(line.isBlank() ? "<dark_gray>—" : "<white>" + line);
+            lore.add(line.isBlank() ? "<dark_gray>-" : "<white>" + line);
         }
         lore.add("");
         lore.add("<yellow>Click <gray>then type the new wording in chat");

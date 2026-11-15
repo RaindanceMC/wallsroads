@@ -35,7 +35,7 @@ public final class GateListMenu extends PaginatedMenu<Gate> {
 
     @Override
     protected Component title() {
-        return Component.text(wall.name() + " — Gates");
+        return Component.text(wall.name() + ": Gates");
     }
 
     @Override
@@ -51,7 +51,7 @@ public final class GateListMenu extends PaginatedMenu<Gate> {
         Material icon = gate.sealed() ? wall.material()
                 : gate.shut() ? Material.IRON_BARS : Material.OAK_FENCE_GATE;
 
-        return Icons.of(icon, state + " — " + gate.width() + " wide",
+        return Icons.of(icon, state + ", " + gate.width() + " wide",
                 "<gray>Where " + roadName + " crosses",
                 "<gray>Passage height " + gate.height(),
                 "",

@@ -320,7 +320,7 @@ public final class WallsRoadsStorage {
             YamlConfiguration yaml = store.read();
             if (!store.problems().isEmpty()) {
                 // Skipped, not replaced: the document stays as it is for somebody to look at.
-                log.error("{} could not be read ({}) — it is not loaded and has been left untouched.", name,
+                log.error("{} could not be read ({}). It is not loaded and has been left untouched.", name,
                         String.join("; ", store.problems()));
                 continue;
             }

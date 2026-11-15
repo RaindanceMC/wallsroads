@@ -69,7 +69,7 @@ public final class ManualBook {
         pages.add(join(
                 mm("<dark_aqua><bold>Walls and Roads"),
                 mm(""),
-                mm("<black>You mark where a road or wall should go. It gets built — and it can be taken back down, putting back what was there."),
+                mm("<black>You mark where a road or wall should go. It gets built, and it can be taken back down, putting back what was there."),
                 mm(""),
                 mm("<dark_gray>Nothing here is permanent.")));
 

@@ -125,7 +125,7 @@ public final class WallsRoadsListMenu extends PaginatedMenu<WallsRoadsListMenu.E
         lore.add("<yellow>Right click <gray>to be shown its outline");
 
         return Icons.of(material,
-                (entry.isWall() ? "<white>Wall — " : "<white>Road — ") + entry.name(), lore);
+                (entry.isWall() ? "<white>Wall: " : "<white>Road: ") + entry.name(), lore);
     }
 
     @Override
