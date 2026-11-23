@@ -56,5 +56,4 @@ wallsroads:
     refused: "<red>The setting <white><setting></white> would not take that value."
     not-yours: "<red>Only staff may change how this server builds walls and roads."
 
-  outline-shown: "<gray>Showing the outline of <white><name></white>."
   outline-elsewhere: "<gray><white><name></white> is in <white><world></white>, not here."

@@ -162,7 +162,6 @@ public final class WallsRoadsListMenu extends PaginatedMenu<WallsRoadsListMenu.E
         services.outline().draw(viewer, viewer.getWorld(), corners, viewer.getLocation().getBlockY(),
                 new Particle.DustOptions(entry.isWall()
                         ? org.bukkit.Color.SILVER : org.bukkit.Color.ORANGE, 1.0f));
-        services.messages().send(viewer, "wallsroads.outline-shown", "name", entry.name());
     }
 
     private String nameOf(UUID who) {
